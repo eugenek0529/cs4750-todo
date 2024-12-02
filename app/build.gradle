@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -44,6 +45,9 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -68,23 +72,48 @@ dependencies {
 //    debugImplementation 'androidx.compose.ui:ui-tooling'
 //    debugImplementation 'androidx.compose.ui:ui-test-manifest'
 
-    // from project
+    // from project - original
 
-    implementation 'androidx.core:core-ktx:1.9.0'
+//    implementation 'androidx.core:core-ktx:1.8.0'
+//    implementation 'androidx.appcompat:appcompat:1.5.1'
+//    implementation 'com.google.android.material:material:1.6.1'
+//    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+//    implementation 'androidx.compose.ui:ui-graphics-android:+'
+//    testImplementation 'junit:junit:4.13.2'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+//
+//    implementation "androidx.room:room-ktx:2.4.3"
+//
+//    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+//    implementation "androidx.activity:activity-ktx:1.6.0"
+//    implementation "androidx.fragment:fragment-ktx:1.5.3"
+//    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+//    implementation 'androidx.room:room-runtime:2.4.3'
+
+    // new
+    implementation 'androidx.core:core-ktx:1.8.0' // Older version of core-ktx
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.compose.ui:ui-graphics-android:+'
+
+    implementation "androidx.compose.ui:ui:1.2.0" // Downgrade Compose to match SDK 33
+    implementation "androidx.compose.material3:material3:1.0.0-alpha13" // Compatible version
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation "androidx.room:room-ktx:2.4.3"
+    kapt "androidx.room:room-compiler:2.4.3"
+    implementation 'androidx.room:room-runtime:2.4.3'
 
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
     implementation "androidx.activity:activity-ktx:1.6.0"
-    implementation "androidx.fragment:fragment-ktx:1.5.3"
-    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
-    implementation 'androidx.room:room-runtime:2.4.3'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
+    implementation "androidx.fragment:fragment-ktx:1.3.0"
+
+    apply plugin: 'kotlin-kapt'
 }

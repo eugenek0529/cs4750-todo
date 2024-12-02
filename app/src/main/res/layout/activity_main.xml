@@ -15,9 +15,6 @@
         android:backgroundTint="@color/design_default_color_background" />
 
     <!-- Floating Action Button for Adding New Tasks -->
-
-    <!-- Bottom Bar with View All and View Completed Buttons -->
-
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/newTaskButton"
         android:layout_width="wrap_content"
@@ -35,6 +32,7 @@
         app:icon="@drawable/ic_add"
         app:iconTint="@color/teal_200" />
 
+    <!-- Bottom Bar with View All and View Completed Buttons -->
     <LinearLayout
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
