@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -9,23 +10,26 @@
     <!-- Task Title -->
     <TextView
         android:id="@+id/taskTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="New Task"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
 
     <!-- Task Name Input -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Task Name"
+        android:hint="Title"
+        app:hintTextColor="@color/hint_text"
         android:layout_marginTop="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@color/white"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Task Description Input -->
@@ -33,27 +37,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Description"
+        app:hintTextColor="@color/hint_text"
         android:layout_marginTop="8dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/desc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@color/white"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Date Button -->
     <Button
         android:id="@+id/dateButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/primary_color"
         android:text="Date"
-        android:layout_marginTop="8dp" />
+        android:textColor="@color/white" />
 
     <!-- Save Button -->
     <Button
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:layout_marginTop="16dp" />
+        android:layout_height="70dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/primary_color"
+        android:text="ADD"
+        android:textSize="20sp"
+        android:textColor="@color/white" />
 </LinearLayout>

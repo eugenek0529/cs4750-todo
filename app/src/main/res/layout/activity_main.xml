@@ -1,68 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_color"
     tools:context=".MainActivity">
 
-    <!-- RecyclerView for the To-Do List -->
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="@color/primary_color"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="TODO APP"
+        app:titleTextColor="@color/white" />
+
+    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/todoListRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="@color/design_default_color_background" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <!-- Floating Action Button for Adding New Tasks -->
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    <!-- FloatingActionButton -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/newTaskButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="80dp"
-        android:backgroundTint="@color/teal_200"
-        android:padding="5dp"
-        android:text="Add Task"
-        android:textColor="@color/black"
-        app:icon="@drawable/ic_add"
-        app:iconTint="@color/teal_200" />
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/add_button"
+        android:src="@drawable/baseline_add_24"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Bottom Bar with View All and View Completed Buttons -->
+    <!-- Bottom Bar -->
     <LinearLayout
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_height="75dp"
         android:orientation="horizontal"
-        android:background="@color/design_default_color_background"
-        android:padding="10dp"
-        android:gravity="center">
+        app:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <!-- View All List Button -->
         <Button
             android:id="@+id/viewAllListButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="View All List"
-            android:backgroundTint="@color/teal_200"
-            android:textColor="@color/white" />
+            style="@style/WhiteButton"
+            android:text="All"
+            android:textColor="@color/bottom_text"
+            android:textStyle="bold"
+            android:visibility="visible" />
 
-        <!-- View Completed Button -->
         <Button
             android:id="@+id/viewCompletedButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            android:text="View Completed"
-            android:backgroundTint="@color/teal_200"
-            android:textColor="@color/white" />
+            style="@style/WhiteButton"
+            android:text="Completed"
+            android:textColor="@color/bottom_text"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

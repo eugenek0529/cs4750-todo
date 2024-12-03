@@ -4,11 +4,17 @@
     <!-- Update the theme to use MaterialComponents -->
     <style name="Theme.Cs4750_todo" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme colors as needed -->
-        <item name="colorPrimary">@color/teal_200</item>
+        <item name="colorPrimary">@color/primary_color</item>
         <item name="colorPrimaryVariant">@color/teal_700</item>
         <item name="colorOnPrimary">@color/black</item>
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorOnSecondary">@color/white</item>
+    </style>
+
+    <style name="WhiteButton">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/bottom_text</item>
+        <item name="backgroundTint">@android:color/white</item>
     </style>
 
 </resources>
